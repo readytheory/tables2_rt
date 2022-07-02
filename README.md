@@ -1,4 +1,7 @@
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/readytheory/django_tables2_walkthrus)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/readytheory/tables2_rt)
 
-Demonstrations of django-tables2 features
+# Demos, walkthrus, code inspection django-tables2
 
+## Purpose
+
+Give recipes for using features of django_tables2 package.  
