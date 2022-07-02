@@ -5,3 +5,10 @@
 ## Purpose
 
 Give recipes for using features of django_tables2 package.  
+
+## setup 
+`pip install django_tables2 tablib bootstrap4 psycopg2-binary`
+`django-admin startproject config`
+`mv config django`
+afsa
+## 
