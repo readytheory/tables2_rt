@@ -5,3 +5,5 @@ Django==4.0.5
 django-tables2==2.4.1
 sqlparse==0.4.2
 tablib==3.2.1
+psycopg2-binary
+
