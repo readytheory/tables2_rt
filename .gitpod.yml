@@ -9,6 +9,7 @@ tasks:
       python manage.py migrate
     command: |
       source venv/bin/activate
+      cd django
       python manage.py runserver
   
 ports:
