@@ -6,6 +6,7 @@ tasks:
       source venv/bin/activate
       pip install --upgrade pip wheel setuptools
       pip install Django
+      cd django
       python manage.py migrate
     command: |
       source venv/bin/activate
