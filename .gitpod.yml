@@ -10,7 +10,7 @@ tasks:
       python manage.py migrate
     command: |
       source venv/bin/activate
-      cd django
+      cd  /workspace/tables2_rt/django
       python manage.py runserver
   
 ports:
