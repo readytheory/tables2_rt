@@ -16,3 +16,6 @@ ports:
     visibility: private
     onOpen: open-preview
 
+  # PostgreSQL server
+  - port: 5432
+    onOpen: ignore
