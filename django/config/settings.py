@@ -15,8 +15,9 @@ from dotenv import load_dotenv
 GITPOD_ENV_FILE = "./gitpod_insecure.env"
 DEFAULT_ENV_FILE = "./.env"
 
-on_gitpod = os.getenv(GITPOD_ENV_FILE, False)
+on_gitpod = os.getenv("GITPOD_WORKSPACE_CONTEXT", False)
 dot_env_file = GITPOD_ENV_FILE if on_gitpod else DEFAULT_ENV_FILE
+
 
 load_dotenv(dotenv_path=dot_env_file, interpolate=False)
 
