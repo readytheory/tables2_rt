@@ -1,5 +1,9 @@
+# personal, after this is from github gitignore
 
-.idea 
+.idea
+.env
+.#*
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

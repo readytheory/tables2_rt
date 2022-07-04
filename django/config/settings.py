@@ -9,6 +9,27 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
+import os
+
+from dotenv import load_dotenv
+GITPOD_ENV_FILE = "./gitpod_insecure.env"
+DEFAULT_ENV_FILE = "./.env"
+
+on_gitpod = os.getenv(GITPOD_ENV_FILE, False)
+dot_env_file = GITPOD_ENV_FILE if on_gitpod else DEFAULT_ENV_FILE
+
+load_dotenv(dotenv_path=dot_env_file, interpolate=False)
+
+postgres_port = os.getenv("POSTGRES_PORT")
+postgres_password = os.getenv("POSTGRES_PASSWORD")
+postgres_user = os.getenv("POSTGRES_USER")
+postgres_database = os.getenv("POSTGRES_DATABASE")
+postgres_host = os.getenv("POSTGRES_HOST")
+django_secret_key = os.getenv("DJANGO_SECRET_KEY")
+debug_mode = os.getenv("DEBUG_MODE")
+
+# If you want to change this to your own settings see
+# https://www.gitpod.io/guides/automate-env-files-with-gitpod-environment-variables
 
 from pathlib import Path
 
@@ -20,7 +41,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-rdyi6d2&u1mlkj!ku9!b5f(@^*wt#_c!gte7-u*fut+jev4mwp'
+SECRET_KEY = django_secret_key
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -76,11 +97,11 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'postgres',
-        'USER': 'gitpod',
-        'PASSWORD': 'gitpod',
-        'HOST': 'localhost',
-        'PORT': '',
+        'NAME': postgres_database,
+        'USER': postgres_user,
+        'PASSWORD': postgres_password,
+        'HOST': postgres_host,
+        'PORT': postgres_port,
     }
 }
 
